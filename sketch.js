@@ -15,11 +15,12 @@ function setup() {
   createCanvas(800,400);
   iss=createSprite(400, 200, 70, 70);
   iss.addImage(iss_img);
+  iss.scale=0.55;
   
 
   spacecraft=createSprite(600,300,50,50);
   spacecraft.addImage(spacecraft1_img);
-  spacecraft.scale=0.35;
+  spacecraft.scale=0.15;
 }
 
 function draw() {
@@ -29,12 +30,15 @@ function draw() {
      spacecraft.x=spacecraft.x+Math.random(200,700);
      if(keyDown(LEFT_ARROW)){
         spacecraft.x=spacecraft.x-5;
+        spacecraft.addImage(spacecraft3_img)
      }
      else if(keyDown(RIGHT_ARROW)){
         spacecraft.x=spacecraft.x+5
+        spacecraft.addImage(spacecraft4_img)
      }
      else if(keyDown(DOWN_ARROW)){
         spacecraft.y=spacecraft.y+5;
+        spacecraft.addImage(spacecraft2_img)
      }
      else if(keyDown(UP_ARROW)){
         spacecraft.y=spacecraft.y-5;
@@ -44,8 +48,8 @@ function draw() {
      hasDocked=true;
      fill("White");
      strokeWeight(4);
-     textSize(20);
-     text("SUCCESSFULLY DOCKED",200,300);
+     textSize(40);
+     text("SUCCESSFULLY DOCKED",270,375);
   }
 
   drawSprites();
